@@ -1,0 +1,48 @@
+<html>
+<body>
+<script>
+function tosRead(yes) {
+    document.getElementById('agreeSubmit').disabled = !yes;
+}
+
+function checkAgreement() {
+    if(document.getElementById('agree').checked) {
+        document.getElementById('main').style.display = 'block';
+        document.getElementById('agreement').style.display = 'none';
+        top.location = '/#/login';
+    } else {
+        alert('Please indicate that you have read and agreed to the Terms/Conditions and Privacy Policy.')
+    }
+}
+</script>
+
+<div id="agreement" style="text-align: center; color: black">
+    <!-- <h1>US Plik</h1> -->
+    <div><img src="OVHcloudLogo.png" width="150" height="30" alt=""></div><br><br>
+    <iframe id="inlineFrame"
+        title="Inline Frame"
+        width="1200"
+        height="300"
+        scrolling="yes"
+        frameborder="0"
+        src="policy.html">
+    </iframe>
+<form method="post" action="">
+    <br>
+    <label>
+        <input type="checkbox" name="checkbox" value="check" id="agree" /> By continuing past this page, YOU AGREE to our TERMS OF USE.</a>
+    </label>
+    <br>
+    <br>
+    <input type="button" name="submit" value="Submit" id="agreeSubmit" onclick="checkAgreement()" disabled="disabled" />
+</div>
+<script>
+var timer = setTimeout(function() {
+if(document.getElementById('user.login')) {
+document.getElementById('main').style.display = 'block';
+document.getElementById('agreement').style.display = 'none';
+}
+}, 300);
+</script>
+</body>
+</html>

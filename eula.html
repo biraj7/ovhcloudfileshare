@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+        body {
+            background: white
+        }
+
+        .page-wrapper {
+            margin: auto;
+            max-width: 1200px;    
+        }
+
+        iframe {
+            width: 100%
+        }
+    </style>
+    
+    <script>
+    function tosRead(yes) {
+        document.getElementById('agreeSubmit').disabled = !yes;
+    }
+    function checkAgreement() {
+        if(document.getElementById('agree').checked) {
+          document.getElementById('main').style.display = 'block';
+          document.getElementById('agreement').style.display = 'none';
+          top.location = '/#/login';
+    } else {
+        alert('Please make sure that you have read and agreed to the Terms/Conditions and Privacy Policy.')
+    }
+}
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header></header>
+        <div class="main">
+            <iframe id="inlineFrame"
+                title="Inline Frame"
+                width="1200"
+                height="300"
+                scrolling="yes"
+                frameborder="0"
+                src="policy.html">
+            </iframe>
+
+            <form method="post" action="">
+            <br>
+            <label>
+                <input type="checkbox" name="checkbox" value="check" id="agree" /> By continuing past this page, you agree to our terms of use.</a>
+            </label>
+            <br>
+            <br>
+            <button type="submit" name="eula_agree" value="1" id="agreeSubmit" onclick="checkAgreement()" disabled="disabled">I AGREE</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
